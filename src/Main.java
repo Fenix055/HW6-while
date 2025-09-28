@@ -28,8 +28,11 @@ public class Main {
         /// Task 3
         int year = 0;
         int human = 12_000_000;
+        float death = 0.008f;
+        float born = 0.017f;
+
         while (year < 10) {
-            human *= 1.009;
+            human *= (1 + born - death);
             year++;
         }
         System.out.println("Год " + year + ", численность населения составляет " + human);
@@ -41,7 +44,7 @@ public class Main {
         while (bank < 12_000_000) {
             bank *= 1.07;
             month++;
-            System.out.println(month + " " + bank);
+            System.out.println("Месяц " + month + " сумма " + bank);
         }
 
         /// Task 5
@@ -52,7 +55,7 @@ public class Main {
             bank *= 1.07;
             month++;
             if (month % 6 == 0) {
-                System.out.println(month + " " + bank);
+                System.out.println("Месяц " + month + " сумма " + bank);
             }
         }
 
@@ -64,7 +67,7 @@ public class Main {
             bank *= 1.07;
             month++;
             if (month % 6 == 0) {
-                System.out.println(month + " " + bank);
+                System.out.println("Месяц " + month + " сумма " + bank);
             }
         }
 
@@ -80,8 +83,12 @@ public class Main {
 
         /// Task 8
         year = 0;
-        while (year <= 2125) {
-            if (year >= 1825 && year <= 2125) {
+        short minYear = 200;
+        byte maxYear = 100;
+        short curYear = 2025;
+
+        while (year <= curYear + maxYear) {
+            if (year >= curYear - minYear && year <= curYear + maxYear) {
                 System.out.println(year);
             }
             year += 79;
